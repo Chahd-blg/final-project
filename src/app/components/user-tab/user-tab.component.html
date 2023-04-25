@@ -1,0 +1,21 @@
+<table class="table table-bordered">
+    <thead>
+      <tr style="color: rgb(0, 174, 255);">
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone number</th>
+        <th scope="col">Adress</th>
+       
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor=" let obj of users">
+        <td > {{obj.firstName}} </td>
+        <td > {{obj.lastName}} </td>
+        <td > {{obj.email}} </td>
+        <td > {{obj.tel}} </td>
+        <td > {{obj.adress}} </td>
+      </tr>
+    </tbody>
+  </table>

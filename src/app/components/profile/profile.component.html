@@ -1,0 +1,157 @@
+<app-banner></app-banner>
+<section style="background-color: #eeeeee;">
+    <div class="container py-5">
+
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card mb-4">
+                    <div class="card-body text-center">
+                        <img [src]="user.avatar" alt="avatar" class="rounded-circle img-fluid"
+                            style="width: 150px;">
+                        <h5 class="my-3"> </h5>
+                        <p class="text-muted mb-1">{{user.role}}</p>
+                        <div class="d-flex justify-content-center mb-2">
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-outline-primary ms-1" data-toggle="modal"
+                                data-target="#exampleModal">Edit Profile</button>
+
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Edit your infos</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <!-- MODAL BODY -->
+                                        <div class="modal-body">
+                                            <form #profilForm="ngForm" (ngSubmit)="editProfile()">
+
+                                                <div class="form-group">
+                                                  <input type="text" [(ngModel)]="user.firstName" readonly name="firstName" class="form-control" placeholder="firstName">
+                                                </div>
+                                    
+                                                <div class="form-group">
+                                                  <input type="text" [(ngModel)]="user.lastName" readonly name="lastName" class="form-control" placeholder="lastName">
+                                                </div>
+                                    
+                                                <div class="form-group">
+                                                  <input type="text" [(ngModel)]="user.email" readonly name="email" class="form-control" placeholder="email">
+                                                </div>
+                                    
+                                    
+                                                <div class="form-group">
+                                                  <input type="password" [(ngModel)]="oldPassword"  name="oldPassword" class="form-control" placeholder="oldPassword">
+                                    
+                                                </div>
+                                    
+                                                <div class="form-group">
+                                                  <input type="password" [(ngModel)]="newPassword"  name="newPassword" class="form-control" placeholder="newPassword">
+                                    
+                                                </div>
+                                    
+                                                <div class="form-group">
+
+                                                  <input type="submit" class="btn btn-primary ms-1" value="Save Change">
+                                                </div>
+
+                                                <div class="modal-footer">
+                                            
+                                                    <button type="button" class="btn btn-outline-primary ms-1" >Close</button>
+                                                </div>
+                                              </form>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-4 mb-lg-0">
+                    <div class="card-body p-0">
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">Full Name</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0"> {{user.firstName}} {{user.lastName}} </p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">Email</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0"> {{user.email}}</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">Phone</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0"> +216 {{user.tel}} </p>
+                            </div>
+                        </div>
+                        <hr>
+
+
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">Address</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0"> {{user.adress}} </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card mb-4 mb-md-0">
+                            <div class="card-body">
+                                <div class="container" style="margin-top: 20px">
+                                    <nav>
+                                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab"
+                                                href="#nav-home" role="tab" aria-controls="nav-home"
+                                                aria-selected="true">My Demandes</a>
+                                            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab"
+                                                href="#nav-profile" role="tab" aria-controls="nav-profile"
+                                                aria-selected="false">Responses</a>
+                                        </div>
+                                    </nav>
+                                    <div class="tab-content" id="nav-tabContent">
+                                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
+                                            aria-labelledby="nav-home-tab"> demande </div>
+                                        <div class="tab-pane fade" id="nav-profile" role="tabpanel"
+                                            aria-labelledby="nav-profile-tab"> Responses </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

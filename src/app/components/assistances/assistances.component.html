@@ -1,0 +1,36 @@
+<app-banner></app-banner>
+<div class="site-section">
+    <div class="container">
+        <div class="row mb-5 justify-content-center">
+            <div class="col-7 text-center">
+                <div class="heading">
+                    <h2 class="text-black">Meet Our assistances</h2>
+                </div>
+                <p>Find the Right Housing Options for You
+                    Our free housing and care finder uses your unique needs to curate a list of the best options in your
+                    area.</p>
+            </div>
+        </div>
+        <div class="site-section bg-light">
+            <div class="container">
+                <div class="row">
+                    <div style="margin-top: 80px;" class="col-12 col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0 " *ngFor=" let obj of allAssistant">
+
+                        <div class="testimonial text-center">
+                            <img src="assets/images/staff_3.jpg" alt="Image" class="img-fluid">
+                            <figcaption>
+                                <P> {{obj.firstName}} {{obj.lastName}} </P>
+                                <p style="font-size: smaller;"> {{obj.gender}} {{obj.role}} </p>
+                                <p style="font-size: smaller;">Senior Home Patient Care Services</p>
+                                <button class="btn btn-info" (click)="getAssitInfo(obj._id)"> Get more infos</button>
+                            </figcaption>
+                            
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

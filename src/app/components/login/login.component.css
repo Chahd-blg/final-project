@@ -1,0 +1,11 @@
+.container01 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+.second-div {
+    margin-top: 20px;
+    width: 50%;
+    height: 200px;
+    background-color: #eee;
+  }

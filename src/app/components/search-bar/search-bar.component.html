@@ -1,0 +1,42 @@
+<div class="site-section bg-primary">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-lg-6 mb-5 mb-md-0">
+                <img src="assets/images/about.png" alt="Image" class="img-fluid">
+            </div>
+            <div class="col-md-6 col-lg-5 ml-auto">
+                <div class="section-heading">
+                    <h2 class="heading mb-3 text-white">Find the right type of care for your Elder </h2>
+                    <p class="heading mb-3 text-white">Is caring for your aging parent or loved one on your own becoming
+                        more difficult? If you're
+                        looking for a helping hand, home care is an option many families choose to make aging in place
+                        safer, easier, and more enjoyable for seniors. Below, we'll provide an overview of home care
+                        services, how to pay for home care, and more to help you decide if home care is right for your
+                        loved one.</p>
+
+
+                    <p class="text-white mb-5"><strong class="h3">&ldquo;We five care With love&rdquo;</strong></p>
+
+                    <form [formGroup]="searchForm">
+
+                        <input type="text" placeholder="search here" class="btn btn-white" formControlName="firstName">
+                        <button (click)="searchAssistant()" class="btn btn-white" style="margin-left: 10px">Search </button>
+
+
+                    </form>
+                    <span style="color: red; font-size: smaller;"> {{errorMsg}} </span>
+                    <br>
+                    <div *ngFor="let elt of foundedAssistant">
+                        <p>
+                            <strong class="h3 text-white mb-5" style="display: inline-block">&ldquo; {{elt.firstName}}
+                                {{elt.lastName}} &rdquo;</strong>
+                            <button class="btn btn-xs btn-danger ml-4" (click)="getAssitInfo(elt._id)"
+                                style="font-size: x-small;">Profile</button>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
